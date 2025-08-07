@@ -31,7 +31,6 @@ export default function RandomUserPage() {
     setIsLoading(true);
     if(genAmount <= 0){
       setZero(false);
-      setIsLoading(false);
       return;
     }else{
       setZero(true);
@@ -39,7 +38,6 @@ export default function RandomUserPage() {
     const resp = await axios.get(
       `https://randomuser.me/api/?results=${genAmount}`
     );
-    setIsLoading(false);
     const users = resp.data.results;
     //Your code here
     //Process result from api response with map function. Tips use function from /src/libs/CleanUser
